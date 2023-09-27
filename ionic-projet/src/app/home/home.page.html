@@ -17,10 +17,32 @@
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
-      <ion-title class="ion-text-end">Conférence</ion-title>
+      <ion-title>Conférence</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content class="ion-padding"> Content . </ion-content>
+  <ion-content class="ion-padding"> 
+    <ion-card>
+      <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+    </ion-card>
+    
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Conférence</ion-card-title>
+        <ion-card-subtitle>Date Début - Date Fin</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        Here's a small text description for the Conférence. 
+      </ion-card-content>
+    
+      <ion-button [routerLink]="['/sessions']"
+      expand="block" fill="outline" class="ion-padding" >Voir les sessions</ion-button>
+
+      <ion-button [routerLink]="['/presentators']"
+      expand="block" fill="outline" class="ion-padding">Voir les présentateurs</ion-button>
+    </ion-card>
+  </ion-content>
+
 </div>
 
 
