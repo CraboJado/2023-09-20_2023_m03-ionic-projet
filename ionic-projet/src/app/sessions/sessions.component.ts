@@ -9,6 +9,8 @@ export class SessionsComponent  implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+  }
 
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { SessionsComponent } from './sessions/sessions.component';
-import { PresentatorsComponent } from './presentators/presentators.component';
+import { SpeakersComponent} from './speakers/speakers.component';
 import { DetailSessionComponent } from './detail-session/detail-session.component';
 import { DetailPresentatorComponent } from './detail-presentator/detail-presentator.component';
 
@@ -19,11 +19,11 @@ const routes: Routes = [
     component:DetailSessionComponent
   },
   {
-    path: 'presentators',
-    component:PresentatorsComponent
+    path: 'speakers',
+    component:SpeakersComponent
   },
   {
-    path: 'presentators/:id',
+    path: 'speakers/:id',
     component:DetailPresentatorComponent
   },
   {
