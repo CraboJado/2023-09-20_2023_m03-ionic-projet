@@ -1,11 +1,13 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref ="'/home'"></ion-back-button>
+      <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>Presentators</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  Presentators list
+  <ion-list>
+    <ion-item *ngFor = "let speaker of speakers" [routerLink]="['/speakers',speaker.id]">{{speaker.name}} </ion-item>
+  </ion-list>
 </ion-content>

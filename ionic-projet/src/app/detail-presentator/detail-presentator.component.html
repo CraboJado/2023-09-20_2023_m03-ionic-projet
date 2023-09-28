@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button [routerLink]="['/sessions']"></ion-back-button>
+      <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>Speakers</ion-title>
   </ion-toolbar>
@@ -25,7 +25,7 @@
     </ion-toolbar>
   </ion-header>
   <ion-list>
-    <ion-item [routerLink]="['/speakers']" *ngFor="let session of sessionsBySpeaker">
+    <ion-item class="ion-margin" [routerLink]="['/speakers']" *ngFor="let session of sessionsBySpeaker">
       {{session.titleMobile ? session.titleMobile  : session.title}}
     </ion-item>
   </ion-list>

@@ -17,6 +17,12 @@ export class SpeakersService {
 
   constructor(private _http: HttpClient) { }
 
+  public getAllSpeakers(){
+    return this._http.get<Speakers>(this._api).pipe(
+            map( speakersObj => Object.values(speakersObj) )
+          )
+  }
+
   public getSpeakers(ids:number[]){
     return this._http.get<Speakers>(this._api).pipe(
             map( speakersObj => { 
@@ -40,16 +46,6 @@ export class SpeakersService {
           )
   }
 
-  // public getSpeakers(){
-
-  //   return this._http.get<Speakers>(this._api).pipe(
-  //           map( speakersObj => { 
-  //             const sessions = Object.values(speakersObj);
-     
-  //             return  sessions ;
-  //           })
-  //         )
-  // }
 
   public getSpeakerById(id:number){
    return this._http.get<Speakers>(this._api).pipe(

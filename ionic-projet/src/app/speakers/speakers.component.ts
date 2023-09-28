@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Speaker } from '../models/speaker';
+import { SpeakersService } from '../services/speakers.service';
 
 @Component({
   selector: 'app-speakers',
@@ -6,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./speakers.component.scss'],
 })
 export class SpeakersComponent  implements OnInit {
+  speakers:Speaker[] = [];
 
-  constructor() { }
+  constructor(private _speakerService : SpeakersService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this._speakerService.getAllSpeakers()
+      .subscribe( speakers => this.speakers = speakers)
+  }
 
 }
