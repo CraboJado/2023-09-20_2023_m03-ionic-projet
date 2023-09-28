@@ -51,4 +51,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          folder: ./ionic-projet/www
+          folder: www
