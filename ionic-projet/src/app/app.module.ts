@@ -10,13 +10,15 @@ import { SessionsComponent } from './sessions/sessions.component';
 import { SpeakersComponent } from './speakers/speakers.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailSessionComponent } from './detail-session/detail-session.component';
+import { DetailPresentatorComponent } from './detail-presentator/detail-presentator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SessionsComponent,
     DetailSessionComponent,
-    SpeakersComponent],
+    SpeakersComponent,
+    DetailPresentatorComponent],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 

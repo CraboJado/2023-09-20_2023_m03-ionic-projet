@@ -34,4 +34,16 @@ export class SessionsService {
         )
   }
 
+  public getSessionsById(speakerId:number){
+    return this._http.get<Sessions>(this._api).pipe(
+       map( sessionsObj => Object.values(sessionsObj)
+                           .filter(session => {
+                             const find = session.speakers?.find( id => id === speakerId)
+                             if(find) return true
+                             else return false
+                           }) 
+         )
+      )
+   }
+
 }

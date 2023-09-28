@@ -1,3 +1,32 @@
-<p>
-  detail-presentator works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [routerLink]="['/sessions']"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Speakers</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-card-header>
+    <ion-card-title>{{speaker.name}}</ion-card-title>
+  </ion-card-header>
+  <ion-card>
+    <img alt="photo" [src]="speaker.photoUrl" />
+    <ion-card-header>
+      <ion-card-subtitle>Biographie</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      {{speaker.bio}}
+    </ion-card-content>
+  </ion-card>
+  <ion-header collapse="condense" >
+    <ion-toolbar>
+      <ion-title>Ses présentations</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list>
+    <ion-item [routerLink]="['/speakers']" *ngFor="let session of sessionsBySpeaker">
+      {{session.titleMobile ? session.titleMobile  : session.title}}
+    </ion-item>
+  </ion-list>
+</ion-content>

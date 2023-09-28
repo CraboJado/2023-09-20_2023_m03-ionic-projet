@@ -54,7 +54,18 @@ export class SpeakersService {
   public getSpeakerById(id:number){
    return this._http.get<Speakers>(this._api).pipe(
       map( speakersObj => Object.values(speakersObj)
-                          .filter(speaker => speaker.id === id)[0] ) 
+                          .filter(speaker => {
+                            if(typeof(speaker.id) === 'string'){
+                              speaker.id = parseInt(speaker.id);
+                            }
+                            return speaker.id === id
+                          })
+                          .map(speaker => {
+                            speaker.photoUrl = `https://devfest2018.gdgnantes.com/${speaker.photoUrl}`;
+                            speaker.companyLogo = `https://devfest2018.gdgnantes.com/${speaker.companyLogo}`;
+                            return speaker;
+                          })[0]
+          ) 
         )
   }
 }
