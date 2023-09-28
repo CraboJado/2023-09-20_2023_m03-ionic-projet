@@ -4,6 +4,7 @@ import { SessionsComponent } from './sessions/sessions.component';
 import { SpeakersComponent} from './speakers/speakers.component';
 import { DetailSessionComponent } from './detail-session/detail-session.component';
 import { DetailPresentatorComponent } from './detail-presentator/detail-presentator.component';
+import { TelephoneComponent } from './telephone/telephone.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'speakers/:id',
     component:DetailPresentatorComponent
+  },
+  {
+    path: 'phone',
+    component:TelephoneComponent
   },
   {
     path: '',
