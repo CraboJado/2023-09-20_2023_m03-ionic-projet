@@ -25,7 +25,7 @@
     </ion-toolbar>
   </ion-header>
   <ion-list>
-    <ion-item class="ion-margin" [routerLink]="['/speakers']" *ngFor="let session of sessionsBySpeaker">
+    <ion-item class="ion-margin" [routerLink]="['/sessions',session.id]" *ngFor="let session of sessionsBySpeaker">
       {{session.titleMobile ? session.titleMobile  : session.title}}
     </ion-item>
   </ion-list>
