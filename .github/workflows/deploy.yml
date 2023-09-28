@@ -19,9 +19,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16.x'
-      - name: change directory
-        run : cd ionic-projet/
       - name: Install dependencies
+        working-directory: ./ionic-projet
         run: npm install
       - name: Build
         run: npm run build
