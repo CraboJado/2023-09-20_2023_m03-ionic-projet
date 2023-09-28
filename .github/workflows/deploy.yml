@@ -23,6 +23,7 @@ jobs:
         working-directory: ./ionic-projet
         run: npm install
       - name: Build
+        working-directory: ./ionic-projet
         run: npm run build
       - name: Generate 404.html file
         run: cp www/index.html www/404.html
