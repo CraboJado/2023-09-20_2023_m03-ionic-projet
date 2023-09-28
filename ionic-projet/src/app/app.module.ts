@@ -11,6 +11,7 @@ import { SpeakersComponent } from './speakers/speakers.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailSessionComponent } from './detail-session/detail-session.component';
 import { DetailPresentatorComponent } from './detail-presentator/detail-presentator.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { DetailPresentatorComponent } from './detail-presentator/detail-presenta
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
-    HttpClientModule],
+    HttpClientModule,
+    FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

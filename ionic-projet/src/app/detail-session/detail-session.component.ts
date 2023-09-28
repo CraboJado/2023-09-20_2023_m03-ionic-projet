@@ -4,6 +4,7 @@ import { SessionsService } from '../services/sessions.service';
 import { Session } from '../models/session';
 import { Speaker } from '../models/speaker';
 import { SpeakersService } from '../services/speakers.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-detail-session',
@@ -14,6 +15,9 @@ export class DetailSessionComponent  implements OnInit {
 
   session:Session = {};
   speakersByids:Speaker[] = [];
+
+  isModalOpen = false;
+  mesNotes:string ="";
 
   constructor( private _activateRoute: ActivatedRoute,
                private _sessionsService: SessionsService,
@@ -38,5 +42,15 @@ export class DetailSessionComponent  implements OnInit {
     })
 
   }
+
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  }
+
+  onSubmit(f: NgForm){
+    this.mesNotes = f.value.note
+    this.setOpen(false)
+  }
+
 
 }
