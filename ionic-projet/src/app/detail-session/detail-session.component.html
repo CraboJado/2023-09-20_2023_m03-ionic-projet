@@ -1,3 +1,31 @@
-<p>
-  detail-session works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [routerLink]="['/sessions']"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Session</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{session.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content *ngIf="session.description">
+      {{session.description }}
+    </ion-card-content>
+  </ion-card>
+  <ion-header collapse="condense" *ngIf="session.speakers">
+    <ion-toolbar>
+      <ion-title>Speakers</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list *ngIf="session.speakers">
+    <ion-item *ngFor="let speaker of speakersByids" class="ion-margin">
+      <ion-thumbnail slot="start">
+        <img alt="Silhouette of mountains" [src]="speaker.photoUrl" />
+      </ion-thumbnail>
+      <ion-label [routerLink]="['/speakers', speaker.id]">{{speaker.name}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

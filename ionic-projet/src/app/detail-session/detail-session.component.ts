@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { SessionsService } from '../services/sessions.service';
+import { Session } from '../models/session';
+import { Speaker } from '../models/speaker';
+import { SpeakersService } from '../services/speakers.service';
 
 @Component({
   selector: 'app-detail-session',
@@ -7,8 +12,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailSessionComponent  implements OnInit {
 
-  constructor() { }
+  session:Session = {};
+  speakersByids:Speaker[] = [];
 
-  ngOnInit() {}
+  constructor( private _activateRoute: ActivatedRoute,
+               private _sessionsService: SessionsService,
+               private _speakersService: SpeakersService ) { }
+
+  ngOnInit() {
+    const id = this._activateRoute.snapshot.params['id'];
+    this._sessionsService.getSessionById( parseInt(id) ).subscribe({
+      next: session => {
+        this.session = session;
+        if(session.speakers){
+          this._speakersService.getSpeakers(session.speakers).subscribe({
+            next: speakers =>{
+              this.speakersByids = speakers
+            },
+            error: err => console.log(err)
+          })
+        
+      }
+    },
+      error: err => console.log( err )
+    })
+
+  }
 
 }

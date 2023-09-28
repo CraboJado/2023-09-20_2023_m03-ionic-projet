@@ -9,11 +9,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { SessionsComponent } from './sessions/sessions.component';
 import { SpeakersComponent } from './speakers/speakers.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DetailSessionComponent } from './detail-session/detail-session.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SessionsComponent,
+    DetailSessionComponent,
     SpeakersComponent],
   imports: [
     BrowserModule, 
