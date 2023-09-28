@@ -8,10 +8,11 @@
 </ion-header>
 <ion-content class="ion-padding">
   <ion-list>
-    <ion-item> Platform : </ion-item>
-    <ion-item> Version : </ion-item>
-    <ion-item> UUID : </ion-item>
-    <ion-item> Model : </ion-item>
-    <ion-item> Connection : </ion-item>
+    <ion-item> Platform : {{info.platform}} </ion-item>
+    <ion-item> Version : {{info.osVersion}} </ion-item>
+    <ion-item> UUID : {{id}}</ion-item>
+    <ion-item> Model : {{info.model}}</ion-item>
+    <ion-item> Connection :  {{ status.connected ? 'connected' : 'not connec'  }}</ion-item>
   </ion-list>
 </ion-content>
+
