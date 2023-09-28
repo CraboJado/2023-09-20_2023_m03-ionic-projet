@@ -45,10 +45,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: deploy_dir
-          path: www
+          path: ./ionic-projet/www
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          folder: www
+          folder: ./ionic-projet/www
