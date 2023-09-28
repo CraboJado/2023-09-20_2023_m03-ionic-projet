@@ -26,6 +26,7 @@ jobs:
         working-directory: ./ionic-projet
         run: npm run build
       - name: Generate 404.html file
+        working-directory: ./ionic-projet
         run: cp www/index.html www/404.html
       - name: Archive build
         if: success()
