@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DetailSessionComponent } from './detail-session/detail-session.component';
 import { DetailPresentatorComponent } from './detail-presentator/detail-presentator.component';
 import { FormsModule } from '@angular/forms';
+import { TelephoneComponent } from './telephone/telephone.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     SessionsComponent,
     DetailSessionComponent,
     SpeakersComponent,
-    DetailPresentatorComponent],
+    DetailPresentatorComponent,
+    TelephoneComponent],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
