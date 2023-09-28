@@ -29,6 +29,7 @@ jobs:
         working-directory: ./ionic-projet
         run: cp www/index.html www/404.html
       - name: Archive build
+        working-directory: ./ionic-projet
         if: success()
         uses: actions/upload-artifact@v3
         with:
