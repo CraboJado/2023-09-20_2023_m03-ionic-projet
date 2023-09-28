@@ -29,12 +29,11 @@ jobs:
         working-directory: ./ionic-projet
         run: cp www/index.html www/404.html
       - name: Archive build
-        working-directory: ./ionic-projet
         if: success()
         uses: actions/upload-artifact@v3
         with:
           name: deploy_dir
-          path: www
+          path: ./ionic-projet/www
   deploy:
     name: Deploy to Github Pages
     runs-on: ubuntu-latest
